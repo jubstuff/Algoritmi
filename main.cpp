@@ -99,6 +99,7 @@ do{
         }
         case 3:{
             cout << "Hai scelto la randomized select" << endl;
+            int k;
             char nome_file_dati[] = "dati_randomized_select.dat";
             ofstream outFileDati (nome_file_dati,ios::out);
             outFileDati << "#Array n°" << " | " << "Dimensione Array"  << " | " << "Tempo Impiegato" << '\n';
