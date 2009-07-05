@@ -2,9 +2,9 @@
 #include <iostream>
 #include <iomanip>
 #include "fstream"
-#include "array.h"
+#include "../helper_classes/array.h"
 #include "insertion_sort.h"
-#include "calcola_tempo.h"
+#include "../helper_classes/calcola_tempo.h"
 
 
 const int START_COUNT_ARRAY = 0; //Numero da cui iniziare il ciclo per l'input
