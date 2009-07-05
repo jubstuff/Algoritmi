@@ -6,7 +6,7 @@ int randomized_select(Array& A,int p,int r,int i){
       return A[p];
     }
     int q = randomized_partition(A,p,r);
-    cout<<"L'array e'" <<A<<endl;
+//    cout<<"L'array e'" <<A<<endl;
     int k = q-p;
     if (i==k){
       return A[q];
