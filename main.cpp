@@ -99,18 +99,19 @@ do{
         }
         case 3:{
             cout << "Hai scelto la randomized select" << endl;
-            char nome_file_dati[] = "dati_randomized_quicksort.dat";
+            char nome_file_dati[] = "dati_randomized_select.dat";
             ofstream outFileDati (nome_file_dati,ios::out);
             outFileDati << "#Array n°" << " | " << "Dimensione Array"  << " | " << "Tempo Impiegato" << '\n';
             for ( j = START_COUNT_ARRAY; j < MAX_ARRAY; j++) {
                 //Inizializzo un array con dimensione crescente
                 Array test(j*(j*100));
-                cout << "Sto ordinando l'array numero " << counter
+                cout << "Sto cercando la statistica d'ordine nell'array numero " << counter
                 << " di " << test.getSize() << " elementi" << endl;
                 test.mischia();
                 //Faccio partire la misurazione del tempo
+                k = rand() % test.getSize(); //Trovo una statistica d'ordine a caso
                 gettimeofday(&start,0);
-                insertion_sort(test);
+                randomized_select(test,0,size-1,k-1)
                 //Termine misurazione
                 gettimeofday(&end,0);
                 //Calcolo la differenza di tempo
