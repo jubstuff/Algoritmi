@@ -113,7 +113,7 @@ do{
                 //Faccio partire la misurazione del tempo
                 k = rand() % test.getSize(); //Trovo una statistica d'ordine a caso
                 gettimeofday(&start,0);
-                randomized_select(test,0,test.getSize()-1,k-1)
+                randomized_select(test,0,test.getSize()-1,k-1);
                 //Termine misurazione
                 gettimeofday(&end,0);
                 //Calcolo la differenza di tempo
