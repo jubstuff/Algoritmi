@@ -41,7 +41,9 @@ int main() {
 
 
 do{
-    cout << "Benvenuti nel Progetto! (-1 per terminare)" << endl;
+    cout << setfill('*') << setw(70) << endl;
+    cout << "\nBenvenuti nel Progetto! (-1 per terminare)" << endl;
+    cout << setfill('*') << setw(70) << '\n';
     cout << "1.Insertion Sort" << endl;
     cout << "2.Randomized Quicksort" << endl;
     cout << "3.Randomized Select" << endl;
