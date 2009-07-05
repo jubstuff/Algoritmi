@@ -6,6 +6,7 @@
 #include "helper_classes/array.h"
 #include "insertion_sort/insertion_sort.h"
 #include "randomized_quicksort/randomized_quicksort.h"
+#include "randomized_select/randomized_select.h"
 #include "helper_classes/calcola_tempo.h"
 
 
