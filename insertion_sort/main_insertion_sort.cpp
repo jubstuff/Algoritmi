@@ -2,7 +2,6 @@
 #include <iostream>
 #include <iomanip>
 #include "fstream"
-
 #include "array.h"
 #include "insertion_sort.h"
 #include "calcola_tempo.h"
