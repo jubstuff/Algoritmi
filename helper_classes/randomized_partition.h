@@ -1,3 +1,5 @@
+#ifndef RANDOMIZED_PARTITION_
+#define RANDOMIZED_PARTITION_
 #include "../helper_classes/partition.h"
 int randomized_partition(Array &A, int c ,int d){
 
@@ -10,3 +12,4 @@ int randomized_partition(Array &A, int c ,int d){
 
     return partition(A,c,d); // chiamo la partition.
     }
+#endif

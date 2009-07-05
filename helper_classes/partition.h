@@ -1,4 +1,5 @@
-
+#ifndef PARTITION_
+#define PARTITION_
 int partition(Array &A,int e ,int f){
 
     int x= A[f]; // ad x assegno l'ultimo elemento dell'array.
@@ -24,4 +25,4 @@ int partition(Array &A,int e ,int f){
 
    return i+1;          // ritorno l'indice della posizione dell'elemento pivot
     }
-
+#endif
