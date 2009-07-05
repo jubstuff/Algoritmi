@@ -2,8 +2,10 @@
 #include <iostream>
 #include <iomanip>
 #include "fstream"
+
 #include "helper_classes/array.h"
 #include "insertion_sort/insertion_sort.h"
+#include "randomized_quicksort/randomized_quicksort.h"
 #include "helper_classes/calcola_tempo.h"
 
 
@@ -38,9 +40,10 @@ int main() {
 
 
 do{
-    cout << "Benvenuti nel Progetto!" << endl;
+    cout << "Benvenuti nel Progetto! (-1 per terminare)" << endl;
     cout << "1.Insertion Sort" << endl;
     cout << "2.Randomized Quicksort" << endl;
+    cout << "3.Randomized Select" << endl;
 
     cin >> scelta;
     switch(scelta){
@@ -52,21 +55,17 @@ do{
             for ( j = START_COUNT_ARRAY; j < MAX_ARRAY; j++) {
                 //Inizializzo un array con dimensione crescente
                 Array test(j*(j*100));
-
                 cout << "Sto ordinando l'array numero " << counter
                 << " di " << test.getSize() << " elementi" << endl;
-
                 test.mischia();
                 //Faccio partire la misurazione del tempo
                 gettimeofday(&start,0);
                 insertion_sort(test);
                 //Termine misurazione
                 gettimeofday(&end,0);
-
                 //Calcolo la differenza di tempo
                 differenza_tempo = tempo_esecuzione(start, end);
                 cout << "Tempo impiegato: " << differenza_tempo << endl;
-
                 //Scrivo su file il tempo impiegato
                 outFileDati << counter << " " << test.getSize()  << " " << differenza_tempo << '\n';
                 counter++;
@@ -75,7 +74,52 @@ do{
         }
         case 2:{
             cout << "Hai scelto la randomized quicksort" << endl;
-//            char nome_file_dati[] = "dati_randomized_quicksort.dat";
+            char nome_file_dati[] = "dati_randomized_quicksort.dat";
+            ofstream outFileDati (nome_file_dati,ios::out);
+            outFileDati << "#Array n°" << " | " << "Dimensione Array"  << " | " << "Tempo Impiegato" << '\n';
+            for ( j = START_COUNT_ARRAY; j < MAX_ARRAY; j++) {
+                //Inizializzo un array con dimensione crescente
+                Array test(j*(j*100));
+                cout << "Sto ordinando l'array numero " << counter
+                << " di " << test.getSize() << " elementi" << endl;
+                test.mischia();
+                //Faccio partire la misurazione del tempo
+                gettimeofday(&start,0);
+                randomized_quicksort(test,0,test.getSize()-1);
+                //Termine misurazione
+                gettimeofday(&end,0);
+                //Calcolo la differenza di tempo
+                differenza_tempo = tempo_esecuzione(start, end);
+                cout << "Tempo impiegato: " << differenza_tempo << endl;
+                //Scrivo su file il tempo impiegato
+                outFileDati << counter << " " << test.getSize()  << " " << differenza_tempo << '\n';
+                counter++;
+            }
+            break;
+        }
+        case 3:{
+            cout << "Hai scelto la randomized select" << endl;
+            char nome_file_dati[] = "dati_randomized_quicksort.dat";
+            ofstream outFileDati (nome_file_dati,ios::out);
+            outFileDati << "#Array n°" << " | " << "Dimensione Array"  << " | " << "Tempo Impiegato" << '\n';
+            for ( j = START_COUNT_ARRAY; j < MAX_ARRAY; j++) {
+                //Inizializzo un array con dimensione crescente
+                Array test(j*(j*100));
+                cout << "Sto ordinando l'array numero " << counter
+                << " di " << test.getSize() << " elementi" << endl;
+                test.mischia();
+                //Faccio partire la misurazione del tempo
+                gettimeofday(&start,0);
+                insertion_sort(test);
+                //Termine misurazione
+                gettimeofday(&end,0);
+                //Calcolo la differenza di tempo
+                differenza_tempo = tempo_esecuzione(start, end);
+                cout << "Tempo impiegato: " << differenza_tempo << endl;
+                //Scrivo su file il tempo impiegato
+                outFileDati << counter << " " << test.getSize()  << " " << differenza_tempo << '\n';
+                counter++;
+            }
             break;
         }
         default:
